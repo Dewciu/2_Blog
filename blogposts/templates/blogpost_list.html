@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+<h1>Hello, here you will can show all created posts</h1>
+
+<p>Work in progress</p>
+
+{% for instance in object_list %}
+    <p>{{instance.date_of_publication}} - <a href = '{{instance.get_absolute_url}}'> {{ instance.title }}</a></p>
+{%endfor%}
+
+{%endblock%}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+
+<h1>{{ object.title }}</h1>
+<p>{{ object.text }}</p>
+<p>{{ object.image }}</p>
+<p>{{ object.language }}</p>
+<p>{{ object.date_of_publication }}</p>
+
+<a href = "{% url 'blogposts:blogpost-list' %}"> Back to post list</a>
+
+{%endblock%}
