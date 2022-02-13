@@ -1,7 +1,7 @@
-<nav>
-    <ul>
-        <li>New post</li>
-        <li>Post list</li>
-        <li>Contact</li>
+{% block nav %}
+    <ul id="nav">
+        <li>{% block nav-home %}<a href="{% url 'home' %}">Home</a>{% endblock %}</li>
+        <li>{% block nav-post-create %}<a href="{% url 'blogposts:blogpost-list' %}">Post list</a>{% endblock %}</li>
+        <li>{% block nav-post-list %}<a href="{% url 'blogposts:blogpost-create' %}">Post create</a>{% endblock %}</li>
     </ul>
-</nav>
+{% endblock %}
