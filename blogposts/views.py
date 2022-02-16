@@ -5,6 +5,7 @@ from .models import Blogpost
 
 # Create your views here.
 
+
 def blogpost_create_view(request):
     form = BlogpostForm(request.POST, request.FILES)
 

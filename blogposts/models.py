@@ -1,6 +1,3 @@
-from cgitb import text
-from datetime import date, datetime
-from email.mime import image
 from django.db import models
 from django.core.files.storage import FileSystemStorage
 from django.utils.translation import gettext_lazy as _
@@ -8,7 +5,7 @@ from django.urls import reverse
 
 
 # Create your models here.
-fs = FileSystemStorage(location='blogposts\media\photos')
+fs = FileSystemStorage(location='static/image')
 
 class Blogpost(models.Model):
     
