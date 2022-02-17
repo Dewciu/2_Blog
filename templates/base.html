@@ -1,14 +1,20 @@
 <!doctype html>
+{% load static %}
 <html>
 <head>
     <title>My own blog app</title>
+    <link rel="stylesheet", href="{% static '/css/base.css' %}">
 </head>
 <body>
-
-    {%include 'navbar.html'%}
-
-    {%block content%}
-    x
-    {%endblock%}
+    <section>
+    <div id="navbar">
+        {%include 'navbar.html'%}
+    </div>
+    <div>
+        {%block content%}
+        
+        {%endblock%}
+    </div>
+    </section>
 </body>
 </html>

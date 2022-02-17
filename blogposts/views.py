@@ -1,5 +1,6 @@
+from multiprocessing import context
 from turtle import title
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .forms import BlogpostForm
 from .models import Blogpost
 
@@ -11,7 +12,7 @@ def blogpost_create_view(request):
 
     if form.is_valid():
         form.save()
-        form=BlogpostForm()
+        return redirect('/blog')
     
     context = {
         'form' : form
@@ -20,16 +21,28 @@ def blogpost_create_view(request):
     return render(request, 'blogpost_create.html', context)
 
 def blogpost_list_view(request):
-    queryset = Blogpost.objects.all()
+    blogposts = Blogpost.objects.all()
     context = {
-        'object_list':  queryset
+        'blogposts':  blogposts
     }
+
 
     return render(request, 'blogpost_list.html', context)
 
 def blogpost_detail_view(request, id):
     obj = get_object_or_404(Blogpost, id=id)
+
     context = {
         'object':   obj
     }
     return render(request, 'blogpost_detail.html', context)
+
+def blogpost_delete_view(request, id):
+    blogpost = Blogpost.objects.get(id=id)
+    if request.method == 'POST':
+        blogpost.delete()
+        return redirect('/blog')
+    context = {
+        'blogpost' : blogpost
+    }
+    return render (request, 'blogpost_delete.html', context)

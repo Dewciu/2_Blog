@@ -1,4 +1,3 @@
-from cgitb import text
 from django import forms
 from .widgets import DatePicker
 from .models import Blogpost
@@ -32,4 +31,4 @@ class BlogpostForm(forms.ModelForm):
                                         }
                                       ),
             'date_of_publication'   : DatePicker()
-         }
+        }

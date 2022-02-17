@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<p>Are you sure you want delete blogpost named: "{{blogpost.title}}"</p>
+<form action="{% url 'blogposts:blogpost-delete' blogpost.id %}" method = "POST">
+    {% csrf_token %}
+
+    <input type="submit" name="Confirm">
+
+</form>
+
+{% endblock %}

@@ -1,7 +1,9 @@
 {% block nav %}
-    <ul id="nav">
-        <li>{% block nav-home %}<a href="{% url 'home' %}">Home</a>{% endblock %}</li>
-        <li>{% block nav-post-create %}<a href="{% url 'blogposts:blogpost-list' %}">Post list</a>{% endblock %}</li>
-        <li>{% block nav-post-list %}<a href="{% url 'blogposts:blogpost-create' %}">Post create</a>{% endblock %}</li>
-    </ul>
+{% load static %}
+
+    <p id="nav">
+        {% block nav-home %}<a href="{% url 'home' %}">Home</a>{% endblock %}<br><br>
+        {% block nav-post-create %}<a href="{% url 'blogposts:blogpost-list' %}">Post list</a>{% endblock %}<br><br>
+        {% block nav-post-list %}<a href="{% url 'blogposts:blogpost-create' %}">Post create</a>{% endblock %}<br><br>
+    </p>
 {% endblock %}
