@@ -2,9 +2,7 @@
 
 
 {%block content%}
-<h1>Hello, here you will can create your own posts</h1>
-
-<p>Work in progress</p>
+<h1>Create your own blogpost!</h1>
 
 <form method='POST', enctype='multipart/form-data'> {% csrf_token %}
     {{form.as_p}}

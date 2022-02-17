@@ -10,5 +10,6 @@
 <p>{{ object.date_of_publication }}</p>
 
 <a href = "{% url 'blogposts:blogpost-list' %}"> Back to post list</a>
+<p><a href = "{% url 'blogposts:blogpost-delete' object.id %}"> Delete</a></p>
 
 {%endblock%}

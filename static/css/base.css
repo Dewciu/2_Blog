@@ -1,0 +1,20 @@
+body{
+    background-color:lightblue;
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+div{
+    border: 1px solid black;
+    outline-style: solid;
+    outline-color:blue;
+    outline-width: thin;
+    width: 1000px;
+    text-align: center;
+}
+
+#navbar{
+    width: 150px;
+    background-color:lightskyblue;
+}
